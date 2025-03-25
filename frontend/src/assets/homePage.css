@@ -1,0 +1,80 @@
+.todolist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.todo-input {
+  width: 60vw;
+  border: 2px solid #6c63ff;
+  border-radius: 5px;
+  width: 60vw;
+  text-align: left;
+  padding-left: 20px;
+}
+.add-todo {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50px;
+  background-color: #6c63ff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+.todolist {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  list-style: none;
+  align-items: center;
+}
+.todo {
+  display: flex;
+  width: 60vw;
+  height: 60px;
+  border-bottom: 1px solid #6c63ff;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.li-chechbox {
+  width: 30px;
+  height: 30px;
+}
+.todo-checkbox-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.update-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.icons {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.todolist-container-upper-lower {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.todolist-container-upper {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}

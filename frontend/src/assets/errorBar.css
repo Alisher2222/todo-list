@@ -1,0 +1,12 @@
+.errorBar-container {
+  position: absolute;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.error-message {
+  color: white;
+}
