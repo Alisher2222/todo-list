@@ -1,0 +1,39 @@
+version: "3.8" # Удали предупреждение о старой версии
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    env_file:
+      - ./backend/.env # Подключаем .env
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    env_file:
+      - ./backend/.env # Теперь MySQL тоже подтянет переменные
+    environment:
+      MYSQL_ROOT_PASSWORD: "Alisherasanov2005"
+      MYSQL_DATABASE: "todolist"
+      MYSQL_PASSWORD: "Alisherasanov2005"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  mysql_data:

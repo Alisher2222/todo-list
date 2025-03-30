@@ -1,0 +1,16 @@
+# 1️⃣ Базовый образ с Node.js
+FROM node:18
+
+# 2️⃣ Устанавливаем рабочую директорию
+WORKDIR /app
+
+# 3️⃣ Копируем package.json и устанавливаем зависимости
+COPY package.json package-lock.json ./
+RUN npm install
+
+# 4️⃣ Копируем весь код
+COPY . .
+
+# 5️⃣ Открываем порт и запускаем сервер
+EXPOSE 3000
+CMD ["node", "app.js"]
